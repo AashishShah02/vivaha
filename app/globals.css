@@ -1,26 +1,457 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+  font-family: sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.Navbar__logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #555;
+}
+
+button {
+  background-color: #18181b;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.HeroSection {
+  height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background-color: #f9fcff;
+  font-family: sans-serif;
+  gap: 2rem;
+}
+
+.HeroSection__content {
+  max-width: 70%;;
+}
+
+.HeroSection__content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.HeroSection__content p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.HeroSection__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button.primary {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+button.secondary {
+  background-color: white;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+img {
+  background-color: #ededed;
+  height: 400px;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Services {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: sans-serif;
+}
+
+.Services > div:first-child {
+  display: inline-block;
+  background-color: #111827;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.Services h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.Services p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Services__cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.Services__cards > div {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.Services__cards > div:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.Services__cards span {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.Services__cards p {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.View-all-services button {
+  background-color: white;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.View-all-services button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Container layout */
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem 5%;
+  background-color: #f9fbfd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Left-side info */
+.contact > div:first-child {
+  flex: 1;
+  align-items: center
+
+}
+
+.contact > div:first-child > div {
+  background-color: #1c1c1c;
+  color: white;
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Right-side form section */
+.ContactUs {
+  flex: 1;
+  max-width: 50%;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.ContactUs__container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.ContactUs__container p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.ContactUs__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ContactUs__form label,
+.ContactUs__form input,
+.ContactUs__form select,
+.ContactUs__form textarea {
+  display: block;
+  width: 100%;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Input styles */
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .contact {
+    flex-direction: column;
+  }
+
+  .contact > div:first-child,
+  .ContactUs {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* Blog Section */
+
+.Blog {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.Blog > div {
+  display: inline-block;
+  background: #000;
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.Blog h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.Blog p {
+  color: #666;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.b1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Card Style */
+.b1 > div {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.b1 > div:hover {
+  transform: translateY(-5px);
+}
+
+.b1 img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background-color: #eaeaea;
+}
+
+.b1 h3 {
+  font-size: 1.05rem;
+  margin: 1rem 1rem 0.5rem;
+  color: #111;
+  font-weight: 600;
+}
+
+.b1 p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+.Date {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+  margin: 0 1rem 1rem;
+}
+
+/* View All Button */
+.view-all {
+  text-align: center;
+  margin: 1rem 0 3rem;
+}
+
+.view-all button {
+  padding: 0.75rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-all button:hover {
+  background-color: #333;
 }
